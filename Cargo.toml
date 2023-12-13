@@ -13,8 +13,8 @@ crate-type = ["cdylib", "rlib"]
 
 
 [dependencies]
-halo2_gadgets = { git = "https://github.com/zkonduit/halo2", ref= "3d7b5e61b3052680ccb279e05bdcc21dd8a8fedf" }
-halo2_proofs = { git = "https://github.com/zkonduit/halo2", ref= "3d7b5e61b3052680ccb279e05bdcc21dd8a8fedf"  }
+halo2_gadgets = { git = "https://github.com/ingonyama-zk/halo2" }
+halo2_proofs = { git = "https://github.com/ingonyama-zk/halo2" }
 halo2curves = { version = "0.1.0" }
 rand = { version = "0.8", default_features = false }
 itertools = { version = "0.10.3", default_features = false }

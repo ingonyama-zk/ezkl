@@ -106,13 +106,19 @@ export ENABLE_ICICLE_GPU=true
 
 GPU acceleration is provided by [Icicle](https://github.com/ingonyama-zk/icicle)
 
-To go back to running with CPU, the previous environment variable must be **unset** instead of being switch to a value of false:
+To go back to running with CPU, the previous environment variable must be **unset** instead of being switched to a value of false:
 
 ```sh
 unset ENABLE_ICICLE_GPU
 ```
 
-**NOTE:** Even with the above environment variable set, icicle is disabled for circuits where k <= 8. To change the value of `k` where icicle is enabled, you can set the environment variable `ICICLE_SMALL_K`.
+>[!NOTE] Even with the above environment variable set, for circuits where k <= 8, icicle is only enabled in certain areas where batching MSMs will help; all other places will fallback to using CPU MSM. To change the value of `k` where this occurs, you can set the environment variable `ICICLE_SMALL_CIRCUIT`.
+> 
+> Example: The following will cause icicle single MSM to be used throughout when k > 10 and CPU single MSM with certain locations using icicle batched MSM when k <= 10
+>```sh
+>export ICICLE_SMALL_CIRCUIT=10
+>```
+>
 
 ### repos
 
